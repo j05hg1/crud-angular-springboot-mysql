@@ -1,0 +1,70 @@
+<div class="card" 
+*ngIf="libroSelected">
+    <div class="card-header">Información del libro</div>
+    <div class="card-body">
+      <form (ngSubmit)="guardar(libroForm.value)" #libroForm="ngForm">
+        <div class="d-grid gap-2 d-md-block">
+          <button
+            [disabled]="libroForm.invalid"
+            class="btn btn-success"
+            *ngIf="libroSelected.id < 1"
+            type="submit"
+          >
+            Guardar
+          </button>
+          <button
+            [disabled]="libroForm.invalid"
+            class="btn btn-success"
+            *ngIf="libroSelected.id > 1"
+            type="button"
+            (click)="editar(libroForm.value)"
+          >
+            Editar
+          </button>
+          <button
+            class="btn btn-danger"
+            *ngIf="libroSelected.id > 1"
+            (click)="eliminar()"
+          >
+            Eliminar
+          </button>
+        </div>
+        <div class="row g-2">
+          <div class="col-md-12">
+            <label for="id">Id: {{ libroSelected.id }} </label>
+            <input
+              *ngIf="libroSelected?.id"
+              type="hidden"
+              name="id"
+              ngModel="{{ libroSelected.id }}"
+            />
+          </div>
+          <div class="col-md-12">
+            <label for="nombreu">Titulo:</label>
+            <input
+              name="nombre"
+              ngModel="{{ libroSelected.titulo }}"
+              type="text"
+              id="nombreu"
+              required
+            />
+          </div>
+          <div class="col-md-12">
+            <label for="rol">Categoria</label>
+            <select
+              name="id_rol"
+              id="rol"
+              ngModel="{{ libroSelected.categoria.id }}"
+              required
+            >
+              <option value="-1">Seleccione una categoria ...</option>
+              <option *ngFor="let categoria of categorias" value="{{ categoria.id }}">
+                {{ categoria.nombre }}
+              </option>
+            </select>
+          </div>          
+        </div>
+      </form>
+    </div>
+  </div>
+  

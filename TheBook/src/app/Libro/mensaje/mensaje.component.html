@@ -1,0 +1,6 @@
+<div class="alert alert-warning alert-dismissible fade show" role="alert"
+[ngClass]="['alert', mensajeService.mensaje.tipo == 1 ? 'alert-success' : 'alert-danger']"
+  *ngIf="mensajeService.mensaje">
+  <strong>{{ mensajeService.mensaje.texto }}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>

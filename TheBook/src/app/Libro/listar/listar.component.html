@@ -1,0 +1,47 @@
+<!-- <p>listar works!</p> -->
+<div class="container"> 
+<div class="card">
+    <div class="card-header">Lista de libros</div>
+    <div class="card-body">
+      <div class="d-grid d-md-block">
+        <div class="container-sm">          
+          <button class="btn btn-primary" (click)="crear()">Crear</button>
+        </div>
+      </div>
+      <div class="table-responsive">        
+        <!-- *ngIf="libros" -->
+        <table 
+        
+            class="table table-hover" >
+          <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titulo</th>
+                <th>Autor</th>
+                <th>Categoria</th>
+                <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="llibros">
+            <tr 
+            *ngFor="let libro of libros"
+            [class.bg-secondary]="libro === libroSelected"
+            (click)="seleccionar(libro)"
+            class="text-center">
+              <td>{{libro.id}}</td>            
+              <td>{{libro.titulo}}</td>            
+              <td>{{libro.autor}}</td>
+              <td>{{ libro.categoria.nombre}}</td>              
+              <td>
+                  <button class="btn btn-warning">Editar</button>
+                  <button class="btn btn-danger" style="margin-left: 10px;">Remover</button> <!-- Boton Eliminar -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <!-- <app-formulario [libroSelected]="libroSelected"></app-formulario> -->
+</div>

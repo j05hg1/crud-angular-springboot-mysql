@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-header">Parametro de busqueda</div>
+    <div class="card-body">
+        <div class="container-sm">      
+            <div class="d-grid gab-2 d-md-block">
+                <button class="btn btn-primary" (click)="consultar()">Consultar</button>
+                <button class="btn btn-primary" (click)="limpiar()" style="margin-left: 10px;">Limpiar</button>
+            </div>
+            <br>
+            <div class="d-grid gab-2 d-md-block">
+                <label for="titulob">Titulo:</label>&nbsp;
+                <input [(ngModel)]="tituloBuscar" type="text" id="titulob"/>
+            </div>
+        </div>
+    </div>
+  </div>
+  

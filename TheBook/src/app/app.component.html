@@ -1,0 +1,42 @@
+<div style="text-align:center">
+  {{title}}
+  <div class="toolbar" role="banner">
+    <img
+      width="130"
+      alt="TheBooks Logo"
+      src="https://www.svgrepo.com/show/85242/bookshelf.svg"
+    />
+  </div>
+</div>
+<div class="container-sm">    
+    <button (click)="Listar()" class="btn btn-info">Listar</button>
+    <button (click)="Nuevo()" class="btn btn-success" style="margin-left: 10px;">Nuevo</button>
+    <!-- <button class="btn btn-primary" (click)="crear()">Crear</button> -->
+</div>
+<div class="container-sm" style="margin-top: 20px;">
+  <div class="row align-items-center">
+    <div class="col-sm-4">
+      <app-busqueda></app-busqueda>
+      
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container-sm">
+  <div class="row align-items-center">
+    <div class="col-sm-12"> 
+      <app-mensaje></app-mensaje>       
+      <!-- <app-listar></app-listar> -->
+    </div>
+  </div>
+</div>
+<br>
+<div class="container-sm">
+  <div class="row align-items-center">
+    <div class="col-sm-12">      
+      <!-- <app-formulario ></app-formulario> -->
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
